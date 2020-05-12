@@ -1,0 +1,17 @@
+Javascript Code:
+ <script type="text/javascript">
+        function Validate(PDFFile) {
+                var file = PDFFile.value;
+                var length = file.length;
+                var extension = file.slice(length - 4, length);
+                if (extension.toUpperCase() == ".PDF") {
+                }
+                else {
+                    alert("Only PDF");
+                    document.getElementById("ContentPlaceHolder1_fileUpload1").value = "";
+                }
+            }
+    </script>
+
+ASPX Code:
+<asp:FileUpload ID="fileUpload1" runat="server" onchange="Validate(this)" />
